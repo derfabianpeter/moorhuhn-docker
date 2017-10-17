@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- CREATED BY LITTLE BIG OWL 2017, only for study purpose -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sprite</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div id="scoreContainer">
+        <h1 id="score">score: <span id="scoreValue">0</span> </h1>
+        <h1 id="gameOverHeading">GAME OVER</h1>   
+    </div>
+    <div class="clear"></div>
+    <div id="startBtn" > start game</div>
+    <div id="anim"></div>
+    <div id="offOnAudio"></div>
+
+    <audio id="shoot">
+        <source src="audio/ShotguOneShot.mp3" type="audio/mpeg">
+        Your browser does not support the audio elemnt.
+    </audio>
+    
+
+    <!-- IMAGE PRELOAD -->
+    <div id="imageOnloadContainer">
+
+        <!-- INTRO -->
+        <img src="sprites/intro.png" alt="intro sprite">
+        <!-- TARGETS SPRITES -->
+        <img src="sprites/spriteDeadLeftL.png" alt="dead left l">
+        <img src="sprites/spriteDeadLeftM.png" alt="dead left m">
+        <img src="sprites/spriteDeadLeftS.png" alt="dead left s">
+        <img src="sprites/spriteDeadRightL.png" alt="dead right l">
+        <img src="sprites/spriteDeadRightM.png" alt="dead right m">
+        <img src="sprites/spriteDeadRightS.png" alt="dead right s">
+
+        <img src="sprites/spriteLiveLeftL.png" alt="live left l">
+        <img src="sprites/spriteLiveLeftM.png" alt="live left m">
+        <img src="sprites/spriteLiveLeftS.png" alt="live left s">
+        <img src="sprites/spriteLiveRightL.png" alt="live right l">
+        <img src="sprites/spriteLiveRightM.png" alt="live right m">
+        <img src="sprites/spriteLiveRightS.png" alt="live right s">
+        
+    </div>
+
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
