@@ -26,6 +26,12 @@ body{
 
     background-position: center;
     height: 100vh;
+
+    overflow: hidden;
+}
+#imageOnloadContainer{
+    height: 0;
+    width: 0;
 }
 
 #imageOnloadContainer img{
@@ -35,6 +41,10 @@ body{
 
 #scoreContainer{
     color: navy;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
     user-select: none;
 }
 

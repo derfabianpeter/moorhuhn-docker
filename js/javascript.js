@@ -116,8 +116,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 50;
             }, 300);
-            scoreAmount += 50;
+            
         }
         // click on the Medium target going to left        
         if (elem.classList.contains("spriteLiveLeftM")) {
@@ -126,8 +127,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 100;
             }, 300);
-            scoreAmount += 100;
+            
         }
         // click on the Small target going to left        
         if (elem.classList.contains("spriteLiveLeftS")) {
@@ -136,8 +138,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 150;
             }, 300);
-            scoreAmount += 150;
+            
         }
 
         // click on the Large target going to right
@@ -147,8 +150,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 50;
             }, 300);
-            scoreAmount += 50;
+            
         }
         // click on the Medium target going to right        
         if (elem.classList.contains("spriteLiveRightM")) {
@@ -157,8 +161,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 100;
             }, 300);
-            scoreAmount += 100;
+            
         }
         // click on the Small target going to right        
         if (elem.classList.contains("spriteLiveRightS")) {
@@ -167,8 +172,9 @@ var createSprite = function () {
             setTimeout(function () {
                 elem.style.animationPlayState = "paused";
                 elem.parentNode.removeChild(elem);
+                scoreAmount += 150;
             }, 300);
-            scoreAmount += 150;
+            
         }
         updateScore();
     }
