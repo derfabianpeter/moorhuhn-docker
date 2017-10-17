@@ -34,6 +34,14 @@ body{
     width: 0;
 }
 
+.target{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
 #imageOnloadContainer img{
     height: 0;
     width: 0;
