@@ -11,13 +11,13 @@ var minutes = 0;
 var seconds = 0;
 
 var audioShotgun = [new Audio("audio/ShotguOneShot.mp3"), new Audio("audio/ShotguOneShot.mp3"), new Audio("audio/ShotguOneShot.mp3")]
-var audioHelp = true;
+var audioHelp = false;
 
 // click on start playing
 document.getElementById("startBtn").onclick = function () {
 
     if (!playing) {
-
+        audioHelp = true;
         scoreAmount = 0;
         updateScore();
         amountOfTargets = 0;
