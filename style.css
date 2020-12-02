@@ -1,0 +1,457 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-x: hidden;
+
+    -webkit-cursor: url(images/target.png), auto;
+    -moz-cursor: url(images/target.png), auto;
+    -ms-cursor: url(images/target.png), auto;
+    -o-cursor: url(images/target.png), auto;
+    cursor: url(images/target.png), auto;
+
+    font-family: 'Rammetto One', cursive;
+    font-family: 'Fontdiner Swanky', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
+
+    background-image: url("images/mainBack.png");
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-position: center;
+    height: 100vh;
+
+    overflow: hidden;
+}
+#imageOnloadContainer{
+    height: 0;
+    width: 0;
+}
+
+.target{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#imageOnloadContainer img{
+    height: 0;
+    width: 0;
+}
+
+#scoreContainer{
+    color: navy;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#score{
+   text-align: center;
+    text-transform: uppercase;
+}
+
+#gameOverHeading{
+    text-align: center;
+    color: rgb(177, 2, 2);
+    display: none;
+}
+
+#offOnAudio{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: lightblue;
+    border: none;
+    background-image: url("images/sound.png");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+#offOnAudio:hover{
+    cursor: pointer;
+    background-color: #45BCE3;
+}
+
+
+#startBtn{
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    text-transform: uppercase;
+    background: navy;
+    color: white;
+    border: 2px solid navy;
+
+   
+    position: relative;
+    text-align: center;
+    margin: 0 40%;
+    top: 40%;
+   
+}
+
+#startBtn:hover{
+    background: white;
+    color: navy;
+    cursor: pointer;
+    border: 2px solid navy;
+    
+}
+
+
+.clear{
+    clear: both;   
+}
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 900px){
+    #startBtn{
+        font-size: 1.5em;
+        margin: 0 30%;
+    }
+    #scoreContainer{
+        font-size: 50%;
+    }
+}
+
+
+/* START ANIMATION */
+
+#anim{
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    position: relative;
+    top: 40%;
+
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    display: none;
+
+    background-image: url("sprites/intro.png");
+
+
+    -webkit-animation: playAnim 5s steps(34) forwards;
+    -moz-animation: playAnim 5s steps(34) forwards;
+    -ms-animation: playAnim 5s steps(34) forwards;
+    -o-animation: playAnim 5s steps(34) forwards;
+    animation: playAnim 5s steps(34) forwards;
+    
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+
+.spriteLiveLeftL{
+    width: 140px;
+    height: 152px;
+
+    background-image: url("sprites/spriteLiveLeftL.png");
+
+    -webkit-animation: playL 1s steps(13) infinite;
+    -moz-animation: playL 1s steps(13) infinite;
+    -ms-animation: playL 1s steps(13) infinite;
+    -o-animation: playL 1s steps(13) infinite;
+    animation: playL 1s steps(13) infinite, moveL linear 12s forwards;
+
+}
+
+.spriteLiveRightL{
+    width: 140px;
+    height: 152px;
+
+    background-image: url("sprites/spriteLiveRightL.png");
+
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    -webkit-animation: playL 1s steps(13) infinite;
+    -moz-animation: playL 1s steps(13) infinite;
+    -ms-animation: playL 1s steps(13) infinite;
+    -o-animation: playL 1s steps(13) infinite;
+    animation: playL 1s steps(13) infinite, moveR linear 12s forwards;
+
+}
+
+
+.spriteLiveLeftM{
+    width: 100px;
+    height: 108px;
+    
+    background-image: url("sprites/spriteLiveLeftM.png");
+
+    -webkit-animation: playM 1s steps(13) infinite;
+    -moz-animation: playM 1s steps(13) infinite;
+    -ms-animation: playM 1s steps(13) infinite;
+    -o-animation: playM 1s steps(13) infinite;
+    animation: playM 1s steps(13) infinite, moveL linear 15s forwards;
+}
+
+.spriteLiveRightM{
+    width: 100px;
+    height: 108px;
+    
+    background-image: url("sprites/spriteLiveRightM.png");
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+    -webkit-animation: playM 1s steps(13) infinite;
+    -moz-animation: playM 1s steps(13) infinite;
+    -ms-animation: playM 1s steps(13) infinite;
+    -o-animation: playM 1s steps(13) infinite;
+    animation: playM 1s steps(13) infinite, moveR linear 15s forwards;
+}
+
+
+.spriteLiveLeftS{
+    width: 60px;
+    height: 65px;
+    
+    background-image: url("sprites/spriteLiveLeftS.png");
+
+    -webkit-animation: playS 1s steps(13) infinite;
+    -moz-animation: playS 1s steps(13) infinite;
+    -ms-animation: playS 1s steps(13) infinite;
+    -o-animation: playS 1s steps(13) infinite;
+    animation: playS 1s steps(13) infinite, moveL linear 18s forwards;
+}
+.spriteLiveRightS{
+    width: 60px;
+    height: 65px;
+    
+    background-image: url("sprites/spriteLiveRightS.png");
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+    -webkit-animation: playS 1s steps(13) infinite;
+    -moz-animation: playS 1s steps(13) infinite;
+    -ms-animation: playS 1s steps(13) infinite;
+    -o-animation: playS 1s steps(13) infinite;
+    animation: playS 1s steps(13) infinite, moveR linear 18s forwards;
+}
+
+
+
+@-webkit-keyframes playAnim{
+    from{ background-position: 0px 0px}
+    to{ background-position: 0px -15300px}
+}
+@-moz-keyframes playAnim{
+    from{ background-position: 0px 0px}
+    to{ background-position: 0px -15300px}
+}
+@-ms-keyframes playAnim{
+    from{ background-position: 0px 0px}
+    to{ background-position: 0px -15300px}
+}
+@-o-keyframes playAnim{
+    from{ background-position: 0px 0px}
+    to{ background-position: 0px -15300px}
+}
+@keyframes playAnim{
+    from{ background-position: 0px 0px}
+    to{ background-position: 0px -15300px}
+}
+
+
+
+@-webkit-keyframes playL{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1976px;}
+}
+@-moz-keyframes playL{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1976px;}
+}
+@-ms-keyframes playL{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1976px;}
+}
+@-o-keyframes playL{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1976px;}
+}
+@keyframes playL{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1976px;}
+}
+
+
+@-webkit-keyframes playM{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1404px;}
+}
+@-moz-keyframes playM{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1404px;}
+}
+@-ms-keyframes playM{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1404px;}
+}
+@-o-keyframes playM{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1404px;}
+}
+@keyframes playM{
+    from{  background-position-y: 0px;}
+    to{ background-position-y: -1404px;}
+}
+
+@-webkit-keyframes playS{
+    from{ background-position-y: 0px }
+    to{ background-position-y: -845px}
+}
+@-moz-keyframes playS{
+    from{ background-position-y: 0px }
+    to{ background-position-y: -845px}
+}
+@-ms-keyframes playS{
+    from{ background-position-y: 0px }
+    to{ background-position-y: -845px}
+}
+@-o-keyframes playS{
+    from{ background-position-y: 0px }
+    to{ background-position-y: -845px}
+}
+@keyframes playS{
+    from{ background-position-y: 0px }
+    to{ background-position-y: -845px}
+}
+
+@-webkit-keyframes moveL{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(-2000px); }
+}
+@-moz-keyframes moveL{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(-2000px); }
+}
+@-ms-keyframes moveL{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(-2000px); }
+}
+@-o-keyframes moveL{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(-2000px); }
+}
+@keyframes moveL{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(-2000px); }
+}
+
+@-webkit-keyframes moveR{
+    from{ transform: translateX(0px);}
+    to{transform: translateX(2000px); }
+}
+@-moz-keyframes moveR{
+    from{ transform: translateX(100px);}
+    to{transform: translateX(2000px); }
+}
+@-ms-keyframes moveR{
+    from{ transform: translateX(100px);}
+    to{transform: translateX(2000px); }
+}
+@-o-keyframes moveR{
+    from{ transform: translateX(100px);}
+    to{transform: translateX(2000px); }
+}
+@keyframes moveR{
+    from{ transform: translateX(100px);}
+    to{transform: translateX(2000px); }
+}
+
+
+
+@-webkit-keyframes playDL{
+    from{ background-position: 0px 0px;}
+    to{ background-position: 0px -1064px;}
+}
+@-moz-keyframes playDL{
+    from{ background-position: 0px 0px;}
+    to{ background-position: 0px -1064px;}
+}
+@-ms-keyframes playDL{
+    from{ background-position: 0px 0px;}
+    to{ background-position: 0px -1064px;}
+}
+@-o-keyframes playDL{
+    from{ background-position: 0px 0px;}
+    to{ background-position: 0px -1064px;}
+}
+@keyframes playDL{
+    from{ background-position: 0px 0px;}
+    to{ background-position: 0px -1064px;}
+}
+
+@-webkit-keyframes playDM{
+    from{ background-position: 0px opx}
+    to{ background-position: 0px -756px}
+}
+@-moz-keyframes playDM{
+    from{ background-position: 0px opx}
+    to{ background-position: 0px -756px}
+}
+@-ms-keyframes playDM{
+    from{ background-position: 0px opx}
+    to{ background-position: 0px -756px}
+}
+@-o-keyframes playDM{
+    from{ background-position: 0px opx}
+    to{ background-position: 0px -756px}
+}
+@keyframes playDM{
+    from{ background-position: 0px opx}
+    to{ background-position: 0px -756px}
+}
+
+@-webkit-keyframes playDS{
+    from{ background-position: 0px 0px }
+    to{ background-position: 0px -455px}
+}
+@-moz-keyframes playDS{
+    from{ background-position: 0px 0px }
+    to{ background-position: 0px -455px}
+}
+@-ms-keyframes playDS{
+    from{ background-position: 0px 0px }
+    to{ background-position: 0px -455px}
+}
+@-o-keyframes playDS{
+    from{ background-position: 0px 0px }
+    to{ background-position: 0px -455px}
+}
+@keyframes playDS{
+    from{ background-position: 0px 0px }
+    to{ background-position: 0px -455px}
+}
